@@ -2,11 +2,13 @@ package check_sort
 
 import (
 	"slices"
+
+	"github.com/JlucKant/BalloonsSorter/domain"
 )
 
 type ContainerSorterByColor struct{}
 
-func InitContainerSorter() SortChecker {
+func InitContainerSorter() domain.SortChecker {
 	return &ContainerSorterByColor{}
 }
 

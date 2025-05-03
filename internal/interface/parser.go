@@ -47,7 +47,7 @@ func InputParser(reader io.Reader) ([][]uint32, error) {
 			container[indexOfColor] = uint32(coloredBalloonsAmount)
 		}
 
-		containers = append(containers, container)
+		containers[countOfContainers] = container
 	}
 
 	return containers, nil
