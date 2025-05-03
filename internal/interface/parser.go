@@ -15,7 +15,7 @@ func InputParser(reader io.Reader) ([][]uint32, error) {
 		return nil, fmt.Errorf("Missing size value!")
 	}
 
-	containerSize, err := strconv.Atoi(scanner.Text())
+	containerSize, err := strconv.Atoi(strings.TrimSpace(scanner.Text()))
 
 	if err != nil {
 		return nil, fmt.Errorf("Incorrect type of size value!")

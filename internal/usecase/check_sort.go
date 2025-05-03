@@ -12,20 +12,20 @@ func InitContainerSorter() domain.SortChecker {
 	return &ContainerSorterByColor{}
 }
 
-func (containerSorter *ContainerSorterByColor) sorterBySums(containers [][]uint32) ([]uint32, []uint32) {
+func (containerSorter *ContainerSorterByColor) sorterBySums(containers [][]uint32) ([]uint, []uint) {
 	var (
 		containerLength = len(containers)
 
-		containerBalloonsSums = make([]uint32, containerLength)
-		colorBalloonsSums     = make([]uint32, containerLength)
+		containerBalloonsSums = make([]uint, containerLength)
+		colorBalloonsSums     = make([]uint, containerLength)
 	)
 
 	for containerIndex := 0; containerIndex < containerLength; containerIndex++ {
 		for colorIndex := 0; colorIndex < containerLength; colorIndex++ {
 			balloon := containers[containerIndex][colorIndex]
 
-			containerBalloonsSums[containerIndex] += balloon
-			colorBalloonsSums[colorIndex] += balloon
+			containerBalloonsSums[containerIndex] += uint(balloon)
+			colorBalloonsSums[colorIndex] += uint(balloon)
 		}
 	}
 

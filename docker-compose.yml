@@ -1,0 +1,7 @@
+version: "3.8"
+
+services:
+  balloons-sorter:
+    build: .
+    stdin_open: true 
+    tty: true   
